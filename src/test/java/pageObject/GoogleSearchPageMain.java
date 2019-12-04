@@ -19,7 +19,7 @@ public class GoogleSearchPageMain {
 
     public static void clickSearch(WebDriver webDriver) {
         System.out.println("Click search button in main google page");
-        WebDriverWait wait = new WebDriverWait(webDriver, 10);
+        WebDriverWait wait = new WebDriverWait(webDriver, 20);
         WebElement searchElementButton = webDriver.findElement
                 (searchButtonLocator);
         wait.until(ExpectedConditions.visibilityOfElementLocated
