@@ -2,7 +2,6 @@ package constants;
 
 public class Constants {
     public static final String SEARCH_STRING_1 = "test";
-    public static final String SEARCH_STRING_2 = "java";
     public static final String URL_MATCH = "Google";
     public static final String DRIVER_FIREFOX = "src\\test\\resources\\driver\\geckodriver.exe";
     public static final String DRIVER_F = "webdriver.gecko.driver";
