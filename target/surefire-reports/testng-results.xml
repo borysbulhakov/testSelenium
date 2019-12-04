@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TestChromeSelenium1" duration-ms="14077" started-at="2019-10-30T12:32:58Z" finished-at="2019-10-30T12:33:12Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="14077" started-at="2019-10-30T12:32:58Z" finished-at="2019-10-30T12:33:12Z">
+      <class name="TestChromeSelenium1">
+        <test-method status="PASS" signature="testChromeSearch()[pri:0, instance:TestChromeSelenium1@4411d970]" name="testChromeSearch" is-config="true" duration-ms="4053" started-at="2019-10-30T14:32:58Z" finished-at="2019-10-30T14:33:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testChromeSearch -->
+        <test-method status="PASS" signature="testChrome1()[pri:0, instance:TestChromeSelenium1@4411d970]" name="testChrome1" duration-ms="1374" started-at="2019-10-30T14:33:02Z" finished-at="2019-10-30T14:33:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testChrome1 -->
+        <test-method status="PASS" signature="closeChrome()[pri:0, instance:TestChromeSelenium1@4411d970]" name="closeChrome" is-config="true" duration-ms="655" started-at="2019-10-30T14:33:03Z" finished-at="2019-10-30T14:33:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeChrome -->
+        <test-method status="PASS" signature="testChromeSearch()[pri:0, instance:TestChromeSelenium1@4411d970]" name="testChromeSearch" is-config="true" duration-ms="3237" started-at="2019-10-30T14:33:04Z" finished-at="2019-10-30T14:33:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testChromeSearch -->
+        <test-method status="PASS" signature="testChrome2()[pri:0, instance:TestChromeSelenium1@4411d970]" name="testChrome2" duration-ms="3980" started-at="2019-10-30T14:33:07Z" finished-at="2019-10-30T14:33:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testChrome2 -->
+        <test-method status="PASS" signature="closeChrome()[pri:0, instance:TestChromeSelenium1@4411d970]" name="closeChrome" is-config="true" duration-ms="746" started-at="2019-10-30T14:33:11Z" finished-at="2019-10-30T14:33:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeChrome -->
+      </class> <!-- TestChromeSelenium1 -->
+    </test> <!-- Command line test -->
+  </suite> <!-- TestChromeSelenium1 -->
+</testng-results>
