@@ -1,7 +1,11 @@
-import constants.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class TestDriverInitialize {
@@ -9,18 +13,14 @@ public class TestDriverInitialize {
     private static WebDriver webDriver;
 
 
-    public static WebDriver initializeDriver(String driverType) {
+    public static WebDriver initializeDriver(String driverType) throws MalformedURLException {
         if (driverType.equalsIgnoreCase("chrome")) {
-            System.setProperty(Constants.DRIVER_C, Constants.DRIVER_CHROME);
-            System.out.println("TEST chromedriver");
-            webDriver = new ChromeDriver();
-            webDriver.get(Constants.URL);
+            ChromeOptions capability = new ChromeOptions();
+            webDriver = new RemoteWebDriver(new URL("http://192.168.56.1:5577/wd/hub"), capability);
             return webDriver;
         } else {
-            System.setProperty(Constants.DRIVER_F, Constants.DRIVER_FIREFOX);
-            System.out.println("TEST geckodriver");
-            webDriver = new FirefoxDriver();
-            webDriver.get(Constants.URL);
+            FirefoxOptions capability = new FirefoxOptions();
+            webDriver = new RemoteWebDriver(new URL("http://192.168.56.1:5566/wd/hub"), capability);
             return webDriver;
         }
     }
