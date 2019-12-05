@@ -16,11 +16,11 @@ public class TestDriverInitialize {
     public static WebDriver initializeDriver(String driverType) throws MalformedURLException {
         if (driverType.equalsIgnoreCase("chrome")) {
             ChromeOptions capability = new ChromeOptions();
-            webDriver = new RemoteWebDriver(new URL("http://192.168.56.1:5577/wd/hub"), capability);
+            webDriver = new RemoteWebDriver(new URL("http://192.168.56.1:5558/wd/hub"), capability);
             return webDriver;
         } else {
             FirefoxOptions capability = new FirefoxOptions();
-            webDriver = new RemoteWebDriver(new URL("http://192.168.56.1:5566/wd/hub"), capability);
+            webDriver = new RemoteWebDriver(new URL("http://192.168.56.1:5556/wd/hub"), capability);
             return webDriver;
         }
     }

@@ -1,49 +1,39 @@
 import constants.Constants;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 import pageObject.GoogleSearchPageMain;
 
 import java.net.MalformedURLException;
 
 public class TestSelenium {
 
-    static WebDriver driverMOZ;
-    static WebDriver driverCH;
+    static WebDriver driver;
     static GoogleSearchPageMain googleMainPage = new GoogleSearchPageMain();
 
     @BeforeTest
-    public static void driversInnitialise() throws MalformedURLException {
-        driverCH = TestDriverInitialize.initializeDriver("Chrome");
-        driverMOZ = TestDriverInitialize.initializeDriver("Firefox");
+    @Parameters(value={"browser"})
+    public static void driversInnitialise(String browser) throws MalformedURLException {
+        driver = TestDriverInitialize.initializeDriver(browser);
     }
 
     @Test
-    public static void testGoogleSearch1() throws MalformedURLException {
-
-        driverCH.navigate().to(Constants.URL);
-        driverMOZ.navigate().to(Constants.URL);
-
-        Assert.assertEquals(driverCH.getTitle(), Constants.URL_MATCH);
-        Assert.assertEquals(driverMOZ.getTitle(), Constants.URL_MATCH);
-
-        googleMainPage.textInput(driverCH, Constants.SEARCH_STRING_1);
-        googleMainPage.textInput(driverMOZ, Constants.SEARCH_STRING_1);
-
-        googleMainPage.clickSearch(driverCH);
-        googleMainPage.clickSearch(driverMOZ);
-
-        Assert.assertEquals(driverCH.getTitle(),
-                Constants.SEARCH_PAGE_TITLE.replace("?", Constants.SEARCH_STRING_1));
-        Assert.assertEquals(driverMOZ.getTitle(),
+    public static void testGoogleSearch1() {
+        driver.navigate().to(Constants.URL);
+        Assert.assertEquals(driver.getTitle(), Constants.URL_MATCH);
+        googleMainPage.textInput(driver, Constants.SEARCH_STRING_1);
+        googleMainPage.clickSearch(driver);
+        Assert.assertEquals(driver.getTitle(),
                 Constants.SEARCH_PAGE_TITLE.replace("?", Constants.SEARCH_STRING_1));
     }
 
 
     @AfterMethod
     public static void closeBrowser() {
-        driverMOZ.close();
-        driverCH.close();
+        driver.close();
     }
 }
 
