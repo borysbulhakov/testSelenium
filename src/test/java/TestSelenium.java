@@ -17,6 +17,7 @@ public class TestSelenium {
     @BeforeTest
     @Parameters(value={"browser"})
     public static void driversInnitialise(String browser) throws MalformedURLException {
+        System.out.println("Open " + browser);
         driver = TestDriverInitialize.initializeDriver(browser);
     }
 
