@@ -9,22 +9,31 @@ import pageObject.GoogleSearchPageMain;
 
 import java.net.MalformedURLException;
 
-public class TestSelenium {
+public class TestSelenium2 {
 
+    static WebDriver driver;
     static GoogleSearchPageMain googleMainPage = new GoogleSearchPageMain();
 
+    @BeforeTest
+    @Parameters(value={"browser"})
+    public static void driversInnitialise(String browser) throws MalformedURLException {
+        System.out.println("Open " + browser);
+        driver = TestDriverInitialize.initializeDriver(browser);
+    }
 
     @Test
-    @Parameters(value={"browser"})
-    public static void testGoogleSearch1(String browser) throws MalformedURLException {
-        System.out.println("Open " + browser);
-        WebDriver driver = TestDriverInitialize.initializeDriver(browser);
+    public static void testGoogleSearch1() {
         driver.navigate().to(Constants.URL);
         Assert.assertEquals(driver.getTitle(), Constants.URL_MATCH);
-        googleMainPage.textInput(driver, Constants.SEARCH_STRING_1);
+        googleMainPage.textInput(driver, Constants.SEARCH_STRING_2);
         googleMainPage.clickSearch(driver);
         Assert.assertEquals(driver.getTitle(),
-                Constants.SEARCH_PAGE_TITLE.replace("?", Constants.SEARCH_STRING_1));
+                Constants.SEARCH_PAGE_TITLE.replace("?", Constants.SEARCH_STRING_2));
+    }
+
+
+    @AfterMethod
+    public static void closeBrowser() {
         driver.close();
     }
 }

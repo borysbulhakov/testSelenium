@@ -1,15 +1,27 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite thread-count="2" name="Suite" parallel="tests" preserve-order="true">
-    <test name="test1">
+<suite thread-count="4" name="Suite" parallel="tests">
+    <test name="test11">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="TestSelenium"/>
+        </classes>
+    </test>
+    <test name="test12">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="TestSelenium"/>
+        </classes>
+    </test>
+    <test name="test22">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="TestSelenium"/>
         </classes>
     </test>
-    <test name="test2">
-        <parameter name="browser" value="firefox"/>
+    <test name="test21">
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="TestSelenium"/>
         </classes>
