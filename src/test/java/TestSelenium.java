@@ -23,7 +23,7 @@ public class TestSelenium {
         googleMainPage.clickSearch(driver);
         Assert.assertEquals(driver.getTitle(),
                 Constants.SEARCH_PAGE_TITLE.replace("?", Constants.SEARCH_STRING_1));
-        driver.close();
+        driver.quit();
     }
 }
 
